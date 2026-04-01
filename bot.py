@@ -4,6 +4,11 @@ import time
 import requests
 from datetime import datetime
 
+import os
+# Add this to make Render happy on free Web Service
+port = int(os.environ.get("PORT", 10000))
+print(f"Listening on port {port} (for Render free tier)")
+
 # === EASY SETTINGS TO CHANGE ===
 SYMBOL = 'TAO/USDT'      # Change coin here (e.g. 'ETH/USDT')
 TIMEFRAME = '5m'        # Change timeframe here ('5m', '15m', '30m', '1h')
